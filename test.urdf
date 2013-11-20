@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<robot name="test_robot">
+  <link name="link0">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00677429780219456 -8.30044763797673E-07 0.115672741087853" />
+      <mass value="3.91338756237818" />
+      <inertia ixx="0.108971772395243" ixy="7.7834969323672E-07" ixz="0.00383170895702547" iyy="0.108463428769358" iyz="-2.96921620226036E-07" izz="0.157477692397101" />
+    </inertial>
+  </link>
+  <joint name="joint1" type="revolute">
+    <origin rpy="-2.4652E-32 0 0" xyz="0.11446 0.035 0.39613" />
+    <parent link="link0" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit effort="6.712" lower="-1.44862328" upper="1.44862328" velocity="1.30899694" />
+    <calibration rising="0.0" />
+    <dynamics damping="0.7" />
+  </joint>
+  <link name="link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00677429780219456 -8.30044763797673E-07 0.115672741087853" />
+      <mass value="3.91338756237818" />
+      <inertia ixx="0.108971772395243" ixy="7.7834969323672E-07" ixz="0.00383170895702547" iyy="0.108463428769358" iyz="-2.96921620226036E-07" izz="0.157477692397101" />
+    </inertial>
+  </link>
+  <gazebo link="base_link">
+    <plugin name="test_controller" filename="libgazebo_urdf_test.so" />
+  </gazebo>
+</robot>

@@ -1,0 +1,16 @@
+<launch>
+
+  <!-- Should output
+
+        link0
+        1
+        link1
+
+    -->
+
+  <node pkg="gazebo_urdf_test" type="ros_urdf_test" name="test_node" output="screen"/>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description" command="cat $(find gazebo_urdf_test)/test.urdf" />
+
+</launch>
